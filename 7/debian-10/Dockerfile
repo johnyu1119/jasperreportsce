@@ -54,7 +54,7 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 
 # for openshift non-root account
 USER root
-ENV NAMI_PREFIX="/.nami"
+ENV NAMI_PREFIX="/opt/bitnami/nami"
 
 RUN useradd -ms /bin/bash -u 1001 tomcat 
 
