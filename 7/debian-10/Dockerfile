@@ -61,7 +61,7 @@ RUN useradd -ms /bin/bash -u 1001 tomcat
 RUN echo $(ls)
 #mv /root/.nami $NAMI_PREFIX && \
 #mkdir /bitnami && \
-RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/git
+RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
 USER 1001
 
