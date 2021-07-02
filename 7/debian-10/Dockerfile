@@ -2,6 +2,9 @@ FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
 USER root
+ENV NAMI_PREFIX="/.nami"
+
+USER 1001
 
 RUN echo 'line13'
 
