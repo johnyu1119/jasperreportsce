@@ -7,7 +7,7 @@ print_welcome_page
 
 if [[ "$1" == "nami" && "$2" == "start" ]] || [[ "$1" == "/init.sh" ]]; then
     nami_initialize tomcat mysql-client jasperreports
-    info "Starting gosu... "
+    info "Starting gosu1... "
 fi
 info "exect tini..."
 exec tini -- "$@"
