@@ -4,6 +4,11 @@ LABEL maintainer "Bitnami <containers@bitnami.com>"
 USER root
 ENV NAMI_PREFIX="/.nami"
 
+RUN useradd -ms /bin/bash -u 1001 tomcat && \
+    mv /root/.nami $NAMI_PREFIX && \
+    mkdir /bitnami && \
+    chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/git
+
 USER 1001
 
 RUN echo 'line13'
