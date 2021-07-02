@@ -1,6 +1,16 @@
 FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
+USER root
+ENV NAMI_PREFIX="/.nami"
+RUN useradd -ms /bin/bash -u 1001 tomcat && \
+    mv /root/.nami $NAMI_PREFIX && \
+    mkdir /bitnami && \
+    chown -R 1001:0 $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/reportserver && \
+    chmod -R g+rwx $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/reportserver
+USER 1001
+
+
 ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
 COPY /7/debian-10/prebuildfs /
