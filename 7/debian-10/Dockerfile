@@ -7,6 +7,7 @@ RUN echo 'line13'
 
 # Temporary Test
 ENTRYPOINT ["ls"]
+RUN echo $(ls)
 
 ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
