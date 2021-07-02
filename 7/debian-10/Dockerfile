@@ -4,6 +4,10 @@ LABEL maintainer "Bitnami <containers@bitnami.com>"
 USER root
 
 RUN echo 'line13'
+
+# Temporary Test
+ENTRYPOINT ["ls"]
+
 ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
 COPY /7/debian-10/prebuildfs /
