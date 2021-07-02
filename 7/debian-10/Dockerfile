@@ -1,24 +1,6 @@
 FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
-# for openshift non-root account
-USER root
-ENV NAMI_PREFIX="/.nami"
-
-RUN useradd -ms /bin/bash -u 1001 tomcat 
-
-RUN echo $(ls)
-#mv /root/.nami $NAMI_PREFIX && \
-#mkdir /bitnami && \
-RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/git
-
-USER 1001
-
-RUN echo 'line13'
-
-# Temporary Test
-ENTRYPOINT ["ls"]
-RUN echo $(ls)
 
 ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
@@ -68,4 +50,25 @@ ENV ALLOW_EMPTY_PASSWORD="no" \
 EXPOSE 8080 8443
 
 ENTRYPOINT [ "/app-entrypoint.sh" ]
+
+
+# for openshift non-root account
+USER root
+ENV NAMI_PREFIX="/.nami"
+
+RUN useradd -ms /bin/bash -u 1001 tomcat 
+
+RUN echo $(ls)
+#mv /root/.nami $NAMI_PREFIX && \
+#mkdir /bitnami && \
+RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/git
+
+USER 1001
+
+RUN echo 'line13'
+
+# Temporary Test
+ENTRYPOINT ["ls"]
+RUN echo $(ls)
+
 CMD [ "nami", "start", "--foreground", "tomcat" ]
