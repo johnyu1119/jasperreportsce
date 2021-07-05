@@ -65,9 +65,9 @@ RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
 USER 1001
 
-RUN echo 'line13'
+#RUN echo 'line13'
 
 # Temporary Test
-RUN echo $(ls)
+#RUN echo $(ls)
 
 CMD [ "nami", "start", "--foreground", "tomcat" ]
