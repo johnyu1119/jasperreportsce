@@ -63,8 +63,6 @@ RUN echo $(ls)
 #mkdir /bitnami && \
 RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
-USER 1001
-
 RUN cd /opt/bitnami/nami
 RUN ls -al
 
@@ -72,5 +70,7 @@ RUN ls -al
 
 # Temporary Test
 #RUN echo $(ls)
+
+USER 1001
 
 CMD [ "nami", "start", "--foreground", "tomcat" ]
