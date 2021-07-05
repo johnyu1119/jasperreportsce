@@ -63,7 +63,7 @@ RUN echo $(ls)
 #mkdir /bitnami && \
 RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
-RUN cd /opt
+WORKDIR /opt
 RUN ls -al
 
 #RUN echo 'line13'
