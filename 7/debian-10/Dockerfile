@@ -68,7 +68,6 @@ USER 1001
 RUN echo 'line13'
 
 # Temporary Test
-ENTRYPOINT ["ls"]
 RUN echo $(ls)
 
 CMD [ "nami", "start", "--foreground", "tomcat" ]
