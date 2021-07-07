@@ -11,3 +11,4 @@ if [[ "$1" == "nami" && "$2" == "start" ]] || [[ "$1" == "/init.sh" ]]; then
 fi
 info "exect tini1..."
 # exec tini -- "$@"
+exec "$@"
