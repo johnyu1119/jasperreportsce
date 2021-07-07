@@ -9,5 +9,5 @@ if [[ "$1" == "nami" && "$2" == "start" ]] || [[ "$1" == "/init.sh" ]]; then
     nami_initialize tomcat mysql-client jasperreports
     info "Starting gosu2... "
 fi
-info "exect tini..."
+info "exect tini1..."
 # exec tini -- "$@"
