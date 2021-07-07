@@ -10,4 +10,4 @@ if [[ "$1" == "nami" && "$2" == "start" ]] || [[ "$1" == "/init.sh" ]]; then
     info "Starting gosu2... "
 fi
 info "exect tini..."
-exec tini -- "$@"
+# exec tini -- "$@"
