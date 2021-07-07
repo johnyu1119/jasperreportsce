@@ -1,6 +1,7 @@
 FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
+ENV BITNAMI_PKG_CHMOD="-R g+rwX"
 
 ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
@@ -53,17 +54,17 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 
 
 # for openshift non-root account
-USER root
-ENV NAMI_PREFIX="/opt/bitnami/nami"
+#USER root
+#ENV NAMI_PREFIX="/opt/bitnami/nami"
 
-RUN useradd -ms /bin/bash -u 1001 tomcat 
+#RUN useradd -ms /bin/bash -u 1001 tomcat 
 
-RUN echo $(ls)
+#RUN echo $(ls)
 #mv /root/.nami $NAMI_PREFIX && \
 #mkdir /bitnami && \
-RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
+#RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
-USER tomcat
+#USER tomcat
 
 WORKDIR /opt/bitnami
 RUN ls -al
@@ -73,6 +74,6 @@ RUN ls -al
 # Temporary Test
 #RUN echo $(ls)
 
-USER tomcat
+USER 1001
 
 #CMD [ "nami", "start", "--foreground", "tomcat" ]
