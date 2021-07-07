@@ -80,4 +80,4 @@ RUN ls -al
 
 USER 1001
 
-#CMD [ "nami", "start", "--foreground", "tomcat" ]
+CMD [ "nami", "start", "--foreground", "tomcat" ]
