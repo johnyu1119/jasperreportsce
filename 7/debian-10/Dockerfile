@@ -75,4 +75,4 @@ RUN ls -al
 
 USER tomcat
 
-CMD [ "nami", "start", "--foreground", "tomcat" ]
+#CMD [ "nami", "start", "--foreground", "tomcat" ]
