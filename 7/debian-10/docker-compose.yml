@@ -11,7 +11,7 @@ services:
   jasperreports:
     image: docker.io/bitnami/jasperreports:7
     environment:
-      - MARIADB_HOST=mariadb
+      - MARIADB_HOST=vh5337.vtc.edu.hk
       - MARIADB_PORT_NUMBER=3306
       - JASPERREPORTS_DATABASE_USER=bn_jasperreports
       - JASPERREPORTS_DATABASE_NAME=bitnami_jasperreports
