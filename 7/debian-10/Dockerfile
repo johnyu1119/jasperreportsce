@@ -70,7 +70,7 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 
 #USER tomcat
 
-WORKDIR /opt/bitnami
+WORKDIR /opt/bitnami/jasperreports/WEB-INF
 RUN ls -al
 
 #RUN echo 'line13'
