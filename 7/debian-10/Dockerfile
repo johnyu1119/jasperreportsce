@@ -68,8 +68,8 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 #mkdir /bitnami && \
 #RUN chown -R 1001 $NAMI_PREFIX /opt/bitnami/tomcat /opt/bitnami/git
 
-WORKDIR /opt/bitnami/jasperreports/WEB-INF/logs
-RUN ls -al
+#WORKDIR /opt/bitnami/jasperreports/WEB-INF/logs
+#RUN ls -al
 
 #RUN echo 'line13'
 
