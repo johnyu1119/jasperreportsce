@@ -1,6 +1,7 @@
 FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
+USER root
 #ENV BITNAMI_PKG_CHMOD="-R g+rwX"
 
 ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
@@ -79,6 +80,6 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 # Temporary Test
 #RUN echo $(ls)
 
-#USER 1001
+USER 1001
 
 CMD [ "nami", "start", "--foreground", "tomcat" ]
