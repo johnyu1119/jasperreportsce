@@ -19,7 +19,7 @@ services:
     ports:
       - '80:8080'
     volumes:
-      - 'jasperreports_data:/bitnami'
+      - 'jasperreports-data:/bitnami'
     depends_on:
       - mariadb
 volumes:
