@@ -8,7 +8,7 @@ ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
     BITNAMI_PKG_EXTRA_DIRS="/opt/bitnami/java/bin /opt/bitnami/tomcat/bin /opt/bitnami/mysql/bin /opt/bitnami/jasperreports /opt/bitnami/jasperreports/WEB-INF /opt/bitnami/jasperreports/WEB-INF/logs /opt/bitnami/git/bin /opt/bitnami/common/bin /opt/bitnami/nami/bin" \
     HOME="/"
 
-ENV PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
+ENV PATH="/opt/bitnami/jasperreports/WEB-INF/logs:/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
 
 COPY /7/debian-10/prebuildfs /
 
