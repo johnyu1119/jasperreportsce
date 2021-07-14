@@ -9,6 +9,7 @@ services:
     volumes:
       - 'mariadb_data:/bitnami'
   jasperreports:
+    user: root
     image: docker.io/bitnami/jasperreports:7
     environment:
       - MARIADB_HOST=vh5337.vtc.edu.hk
