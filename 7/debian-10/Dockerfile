@@ -25,6 +25,9 @@ RUN bitnami-pkg install git-2.32.0-0 --checksum 3094f50c904e966bd6c6a2d6152cf41f
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 
 RUN useradd -ms /bin/bash -u 1001 tomcat 
+WORKDIR /root
+RUN ls -al
+
 RUN mv /root/.nami /.nami
 RUN usermod -a -G root tomcat
 #     chown -R tomcat /opt/bitnami/tomcat /bitnami /opt/bitnami/jasperreports/WEB-INF/logs
