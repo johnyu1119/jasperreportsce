@@ -9,6 +9,7 @@ services:
     volumes:
       - /path/to/mariadb-persistence:/bitnami
   jasperreports:
+    user: root
     image: docker.io/bitnami/jasperreports:7
     environment:
       - MARIADB_HOST=mariadb
