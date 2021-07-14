@@ -5,7 +5,7 @@ USER root
 #ENV BITNAMI_PKG_CHMOD="-R g+rwX"
 
 ENV BITNAMI_PKG_CHMOD="-R 777" \
-    BITNAMI_PKG_EXTRA_DIRS="/opt/bitnami/java/bin /opt/bitnami/tomcat/bin /opt/bitnami/mysql/bin /opt/bitnami/jasperreports /opt/bitnami/jasperreports/WEB-INF /opt/bitnami/jasperreports/WEB-INF/logs /opt/bitnami/git/bin /opt/bitnami/common/bin /opt/bitnami/nami/bin" \
+    BITNAMI_PKG_EXTRA_DIRS="/.nami /opt/bitnami/java/bin /opt/bitnami/tomcat/bin /opt/bitnami/mysql/bin /opt/bitnami/jasperreports /opt/bitnami/jasperreports/WEB-INF /opt/bitnami/jasperreports/WEB-INF/logs /opt/bitnami/git/bin /opt/bitnami/common/bin /opt/bitnami/nami/bin" \
     HOME="/"
 
 ENV PATH="/opt/bitnami/jasperreports/WEB-INF/logs:/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:/opt/bitnami/mysql/bin:/opt/bitnami/git/bin:/opt/bitnami/common/bin:/opt/bitnami/nami/bin:$PATH"
@@ -25,10 +25,10 @@ RUN bitnami-pkg install git-2.32.0-0 --checksum 3094f50c904e966bd6c6a2d6152cf41f
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 
 RUN useradd -ms /bin/bash -u 1001 tomcat 
-WORKDIR /root
+#WORKDIR /root
 RUN ls -al
 
-RUN mv /root/.nami /.nami
+#RUN mv /root/.nami /.nami
 RUN usermod -a -G root tomcat
 #     chown -R tomcat /opt/bitnami/tomcat /bitnami /opt/bitnami/jasperreports/WEB-INF/logs
 USER root
