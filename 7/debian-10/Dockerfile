@@ -25,9 +25,7 @@ RUN bitnami-pkg install git-2.32.0-0 --checksum 3094f50c904e966bd6c6a2d6152cf41f
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 
 RUN useradd -ms /bin/bash -u 1001 tomcat && \
-    mv /root/.nami $NAMI_PREFIX && \
-    mkdir /bitnami && \
-    chown -R tomcat $NAMI_PREFIX /opt/bitnami/tomcat /bitnami /opt/bitnami/reportserver
+    chown -R tomcat /opt/bitnami/tomcat /bitnami
 USER 1001
 
 RUN bitnami-pkg unpack jasperreports-7.8.0-6 --checksum f5a83bb36ca4cc0d7af9a99555dfc96c2f0dc308d58a1ba29416194c72d29911
