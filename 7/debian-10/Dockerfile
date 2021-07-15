@@ -1,7 +1,7 @@
 FROM docker.io/bitnami/minideb:buster
 LABEL maintainer "Bitnami <containers@bitnami.com>"
 
-USER 1001
+#USER root
 #ENV BITNAMI_PKG_CHMOD="-R g+rwX"
 
 ENV BITNAMI_PKG_CHMOD="-R g+rwX" \
@@ -31,7 +31,7 @@ RUN ls -al
 #RUN mv /root/.nami /.nami
 RUN usermod -a -G root tomcat
 #     chown -R tomcat /opt/bitnami/tomcat /bitnami /opt/bitnami/jasperreports/WEB-INF/logs
-USER 1001
+#USER root
 
 RUN bitnami-pkg unpack jasperreports-7.8.0-6 --checksum f5a83bb36ca4cc0d7af9a99555dfc96c2f0dc308d58a1ba29416194c72d29911
 #RUN bitnami-pkg install gosu-1.13.0-0 --checksum fd7257c2736164d02832dbf72e2c1ed9d875bf3e32f0988520796bc503330129
