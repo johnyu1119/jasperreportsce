@@ -24,7 +24,7 @@ RUN bitnami-pkg unpack mysql-client-10.3.29-0 --checksum 5bf8f1ed022c8ad75a4db5b
 RUN bitnami-pkg install git-2.32.0-0 --checksum 3094f50c904e966bd6c6a2d6152cf41fd3a816d32395622a785ccbcda62b7c5f
 RUN bitnami-pkg install tini-0.19.0-1 --checksum 9b1f1c095944bac88a62c1b63f3bff1bb123aa7ccd371c908c0e5b41cec2528d
 
-RUN useradd -ms /bin/bash -u 1001 tomcat 
+RUN useradd -ms /bin/bash -u 1001 tomcat -G root
 #WORKDIR /root
 RUN ls -al
 
