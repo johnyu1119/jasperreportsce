@@ -90,6 +90,6 @@ ENTRYPOINT [ "/app-entrypoint.sh" ]
 # Temporary Test
 #RUN echo $(ls)
 
-USER 1001
+#USER 1001
 
 CMD [ "nami", "start", "--foreground", "tomcat" ]
