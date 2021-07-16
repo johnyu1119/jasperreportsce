@@ -12,6 +12,7 @@ ENV PATH="/opt/bitnami/jasperreports/WEB-INF/logs:/opt/bitnami/java/bin:/opt/bit
 
 COPY /7/debian-10/prebuildfs /
 
+
 RUN apt-get update
 RUN apt-get install vim -y
 # Install required system packages and dependencies
