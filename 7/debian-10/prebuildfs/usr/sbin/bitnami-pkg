@@ -154,7 +154,7 @@ else
     else
         CURL_ARGS="-sS"
     fi
-    
+    info "https://downloads.bitnami.com/files/$RELEASE_BUCKET/$PACKAGE.tar.gz"
     if ! curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/$PACKAGE.tar.gz"; then
         warn "Package name '$PACKAGE' does not exist, will try '${PACKAGE%-$(identify_distro)}'..."
         if curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/${PACKAGE%-$(identify_distro)}.tar.gz"; then
