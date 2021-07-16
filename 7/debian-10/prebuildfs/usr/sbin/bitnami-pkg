@@ -77,7 +77,7 @@ identify_arch() {
     esac
     echo $arch
 }
-info "https://downloads.bitnami.com/files/$RELEASE_BUCKET/${PACKAGE%-$(identify_distro)}.tar.gz"
+# info "https://downloads.bitnami.com/files/$RELEASE_BUCKET/${PACKAGE%-$(identify_distro)}.tar.gz"
 # break up command line for easy parsing and check legal options
 ARGS=$(getopt -o b:c:h -l "bucket:,checksum:,help" -n "bitnami-pkg" -- "$@")
 if [ $? -ne 0 ]; then
@@ -155,9 +155,11 @@ else
         CURL_ARGS="-sS"
     fi
     info "https://downloads.bitnami.com/files/$RELEASE_BUCKET/$PACKAGE.tar.gz"
-    if ! curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/$PACKAGE.tar.gz"; then
+    if ! curl $CURL_ARGS -LOf "https://hedcert-uat.vtc.edu.hk/dev/bitnami/$PACKAGE.tar.gz"; then
+    #if ! curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/$PACKAGE.tar.gz"; then
         warn "Package name '$PACKAGE' does not exist, will try '${PACKAGE%-$(identify_distro)}'..."
-        if curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/${PACKAGE%-$(identify_distro)}.tar.gz"; then
+        if curl $CURL_ARGS -LOf "https://downloads.bitnami.com/${PACKAGE%-$(identify_distro)}.tar.gz"; then
+        #if curl $CURL_ARGS -LOf "https://downloads.bitnami.com/files/$RELEASE_BUCKET/${PACKAGE%-$(identify_distro)}.tar.gz"; then
             PACKAGE="${PACKAGE%-$(identify_distro)}"
         else
             error "Could not find the requested package..."
