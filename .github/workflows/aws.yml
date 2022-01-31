@@ -28,6 +28,8 @@ jobs:
 
     - name: Build, tag, and push the image to Amazon ECR
       id: build-image
+      with:
+        dockerfile: /7/debian-10/Dockerfile
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: ${{ secrets.REPO_NAME }}
